@@ -26,26 +26,31 @@
     <div class="container col-md-3">
     </div>
     <div class="container col-md-9">
-        <<div class="container ">
-            <h3 class="col-md-10" style=" background-color:#F3616B; color:white; height:50px; padding:0 18px 0 18px;">artikel</h3>
+        <<div class="container " id="container">
+            <h3 class="col-md-12" style=" background-color:#F3616B; color:white; padding:0 18px 0 18px;">artikel</h3>
     </div>
-    <div class="container mx-auto"> 
-        <table>
-            <tr>
-                <td>
-                    <img style="margin: 0 24px 12px 0;" class="isinyakiri" href = "#" src="<?php echo base_url(); ?>assets/baru.jpg">    
-                </td>
+        <div class="container mx-auto"id="container"> 
+            <table>
+                <tr>
+                    <td>
+                        <img style="margin: 0 24px 12px 0; width: 458px; height: 270px;" class="isinyakiri" href = "#" src="<?php echo base_url(); ?>assets/baru.jpg">    
+                    </td>
                     <td>
                         <img style="margin:0 24px 12px 0px;" class="isinya" href = "#" src="<?php echo base_url(); ?>assets/h1.jpg"/>
                     </td>
-            </tr>
-                <td>
-                    <img style="margin: 0 24px 12px 0;" class="isinyakiri" href = "#" src="<?php echo base_url(); ?>assets/h4.jpg">    
-                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img style="margin: 0 24px 12px 0;" class="isinyakiri" href = "#" src="<?php echo base_url(); ?>assets/h4.jpg">    
+                    </td>
                     <td>
                         <img style="margin:0 24px 12px 0px;" class="isinya" href = "#" src="<?php echo base_url(); ?>assets/h5.jpg"/>
                     </td>
-                                    
+                </tr>
+            </table>
+        
+        </div>
+                                        
     <div class="container col-md-3">
     </div>
 </div>

@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel='stylesheet'>
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?> assets/helloFEST.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/helloFEST.css">
   
 
    
