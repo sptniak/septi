@@ -1,0 +1,21 @@
+
+body{
+	background-color: blue; /*1b1818*/
+    font-size: 10px;
+    line-height: 20px;
+    color: red;
+}
+/*#mainNav{
+	font-family: 'Montserrat' , sans-serif;
+    background-color: #1aaed0;
+    height: 60px;
+    position: relative;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bolder;
+    width: 100%;
+} */
+.navbar{
+    font-family: 'Montserrat' , sans-serif;
+    color: red;
+}

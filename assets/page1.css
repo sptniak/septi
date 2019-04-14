@@ -1,0 +1,82 @@
+.Banner{
+    padding: 25px 20px 15px 20px;
+    text-align: center;
+    height: 100px;
+    display: block;
+
+}
+#carouselExampleIndicators{
+    margin-top: 35px;
+}
+
+#isi{
+	color: #fff;
+    min-height: 500px;
+	padding-top: 23px;
+	margin: 0 250px 0 250px;
+}
+
+.section-title{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 16px;
+    font-weight:bold;
+	border-right: 10px;
+    background-color: #1aaed0;
+    color: white;
+    padding: 5px 0px 5px 18px;
+    margin: 20px 0px 20px 0px;
+    vertical-align: baseline;
+}
+.container #artikel1{
+    position: relative;
+}
+.container #artikel1 .isikonten p{
+    position: absolute;;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width:458px;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+}
+.foto:hover .overlay {
+    opacity: 1;
+  }
+  
+  .isi {
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
