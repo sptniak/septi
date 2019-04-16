@@ -62,7 +62,7 @@
   <div class="navbar">
     <ul class="navbar navbar-default navbar-fixed-top">
       <li class="navbar-brand" href="#">
-        <img src="<?php echo base_url(); ?>assets/logo.png">
+        <img src="<?php echo base_url(); ?>assets/logo.png" href="<?php echo site_url('index.php/')?>">
       </li> 
         <a class="nav-item nav-link" href="#">HOME</a>
         <a class="nav-item nav-link" href="#">PARTISIPASI</a>
@@ -70,13 +70,9 @@
         <a class="nav-item nav-link" href="#">ACADEMY</a>
         <a class="nav-item nav-link" href="#">HELLO FEST</a>
         <div id="userinfo" class="nav navbar-nav navbar-right">
-          <!-- <button style="background-color: grey; border: none;"><a href="<?php echo site_url('index.php/daftar/index'); ?>"></a>
-            <input type="submit" class="button" value="Daftar!"><a href="<?php echo site_url('index.php/daftar/index'); ?>"></a>
-            <input type="submit" class="button" value="Login"/>
-          </button> -->
           <div class="hai" style="display: flex; background-color: #6d6d6d;">
             <a class="btn btn-secondary" href="<?php echo site_url('index.php/daftar/index'); ?>">Daftar </a>
-            <a class="btn btn-secondary" href="<?php echo site_url('index.php/daftar/index'); ?>">Login </a>
+            <a class="btn btn-secondary" href="<?php echo site_url('index.php/Hello/login'); ?>">Login </a>
           </div>
       </li>
     </ul>

@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <div class="Banner mx-auto" >
+    <div class="Banner mx-auto justify-content-center" >
         <img src="assets/banner.jpg"/>
     </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -61,19 +61,12 @@
                 </div>
             </div>
             <div class="Karya">
-                <div class="container ">
+                <div class="container " id="container">
                     <h3 class="col-md-10" style=" background-color:#1aaed0; color:white; height:50px;">karya terbaru</h3>
                     <table>
                         <td>
                             <img class="foto" href = "#" src="assets/bro 001.jpg" style="width:217px; 
                     height:217px; margin: 0 12px 24px 0px; "/>
-                            <div class="overlay">
-                                <div class="isi">
-                                    <h3>aaaaa</h3>
-                                </div>
-
-                            </div>
-                        </td>
                         <td>
                             <img href = "#" src="assets/bro002.jpg" style="width:217px; 
                     height:217px; margin: 0 12px 24px 12px;"/>
@@ -91,7 +84,7 @@
             </div>
             <div class="container mx-auto">
                     <h3 class="col-sm-10" style="
-                    color:white; height:50px; background-color:#1aaed0">artikel</h3>
+                    color:white; height:50px; background-color:#1aaed0" id="container">artikel</h3>
                     <div class="container" style="padding:0%">
                         <div id="artikel1"> 
                             <table>

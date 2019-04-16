@@ -42,7 +42,6 @@ body{
       list-style-type:none;
   }
 
-Are you trying to make it responsive? If you are then I would just recommend the following:
 
 .tales {
 width: 100%;
@@ -50,9 +49,6 @@ width: 100%;
 #container {
   max-width: 973px;
 }
-
-However, the best way to handle this responsively would be thru the use of media queries like such:
-
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {}
 

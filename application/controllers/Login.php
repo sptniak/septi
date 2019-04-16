@@ -8,11 +8,11 @@ class Hello extends CI_Controller {
 		parent::__construct();
 	}
 
-	public function login()
-	{	
-		$this->load->view('Utama/One');
+	public function Login()
+	{
+        $this->load->view('Utama/One');
         $this->load->view('Login/login');
-
+        
 	}
 }
 ?>
