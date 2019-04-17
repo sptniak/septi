@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -17,23 +17,17 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">USER ACCOUNT</h1>
                   </div>
-                  <form class="user">
+                  <?php echo form_open_multipart('index.php/Hello/check'); ?>
                     <div class="form-group">
-                     <label><b>Username</b> </label>
-                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="username" required>
+                      <label><b>Username</b> </label>
+                      <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="uname" required>
                     </div>
                     <div class="form-group">
-                        <label ><b>Password</b></label>
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" name= "password" required>
+                      <label ><b>Password</b></label>
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" name= "psw" required>
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-user btn-block">
-                      Login
-                    </button>
-                
-                    <hr>
-                    
-                
+                    <button type="submit" class="btn btn-success btn-user btn-block">Login</button>
                   </div>
                 </div>
               </div>
