@@ -30,9 +30,7 @@
     margin: 20px 0px 20px 0px;
     vertical-align: baseline;
 }
-.container #artikel1{
-    position: relative;
-}
+
 .container #artikel1 .isikonten p{
     position: absolute;;
     bottom: 0;

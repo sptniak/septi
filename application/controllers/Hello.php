@@ -21,8 +21,6 @@ class Hello extends CI_Controller {
 		$this->form_validation->set_rules('uname' , 'username', 'required|trim');
 		$this->form_validation->set_rules('psww' , 'Pass', 'required|trim');
 
-		
-
 	}
 	public function check() {
 		$username = $this->input->post('uname');
@@ -31,10 +29,10 @@ class Hello extends CI_Controller {
 		// var_dump($checkLogin);
 
 		if ( !empty($checkLogin)) {
-			redirect('index.php/daftar/index');
+			redirect('index.php/daftar/index');//kalo ada isinya dan bener
 		}
 		else {
-			echo "BEGO";
+			redirect('index.php/Hello/Login');
 		}
 	}
 }

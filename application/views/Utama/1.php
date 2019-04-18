@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?> assets/page1.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/page1.css">
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <style>
         body{
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="Karya">
-                <div class="container " id="container">
+                <div class="container" id="container">
                     <h3 class="col-md-10" style=" background-color:#1aaed0; color:white; height:50px;">karya terbaru</h3>
                     <table>
                         <td>
