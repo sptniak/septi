@@ -73,8 +73,8 @@
         <a class="nav-item nav-link" href="#">HELLO FEST</a>
         <div id="userinfo" class="nav navbar-nav navbar-right">
           <div class="hai" style="display: flex; background-color: #6d6d6d;">
-            <a class="btn btn-secondary" href="<?php echo site_url('index.php/daftar/index'); ?>">Daftar </a>
-            <a class="btn btn-secondary" href="<?php echo site_url('index.php/Hello/login'); ?>">Login </a>
+            <a class="btn btn-secondary" href="<?php echo site_url('/daftar/index'); ?>">Daftar </a>
+            <a class="btn btn-secondary" href="<?php echo site_url('/Hello/login'); ?>">Login </a>
           </div>
       </li>
     </ul>

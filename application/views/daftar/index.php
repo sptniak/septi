@@ -18,7 +18,10 @@
 			<div class="Content">
 					<div class="row-fluid">
 					<!--  -->
-					<?php echo form_open_multipart('index.php/daftar/add'); ?>
+					<?php if ($this->session->flashdata('sukses') == true) {
+						echo $this->session->flashdata('sukses');
+					}  ?>
+					<?php echo form_open_multipart('/daftar/daftarAction'); ?>
 								<div class="form-group">
 										<label for="email"><b>Username:</b><span>*</span></label>
                                         <input type="text" class="form-control" id="uname" name="uname" value="<?= set_value('uname'); ?>" required>
@@ -98,7 +101,7 @@
 													<option value="Maluku Utara">Maluku Utara</option>
 													<option value="Papua Barat">Papua Barat</option>
 													<option value="Papua">Papua</option></select>
-											</select> -->
+											</select>
 										</br>
 										<div class="form-group">
 												<label><b>No Handphone:</b><span>*</span></label>

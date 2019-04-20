@@ -1,21 +1,8 @@
 <?php
     class Hellomotion extends CI_Model {
-        public function addUser() {
-            $this->load->database();
-            $data = [
-				"username" => $this->input->post('uname', true),
-				"email" => $this->input->post('mail', true),
-				"passwordd" => $this->input->post('psww', true),
-				"fullname" => $this->input->post('fullname', true),
-				"tgl" => $this->input->post('profile_tanggal_lahir[day]', true),
-				"bln" => $this->input->post('profile_tanggal_lahir[month]', true),
-				"tahun" => $this->input->post('profile_tanggal_lahir[year]', true),
-				"kota" => $this->input->post('domisili', true),
-				"province" => $this->input->post('Provinsi', true),
-				"no_phone" => $this->input->post('nomor', true),
-				"pekerjaan" => $this->input->post('job', true),
-            ];
-            return $this->db->insert('registrasi', $data);
+        public function addUser($username, $email, $password, $fullname, $tgl, $bln, $tahun, $kota, $province, $no_phone, $pekerjaan, $twitter) {
+            // return $this->db->insert('registrasi', );
+            return $this->db->query("INSERT INTO `registrasi` (`username`, `email`, `passwordd`, `fullname`, `tgl`, `bln`, `tahun`, `kota`, `province`, `no_phone`, `pekerjaan`, `twitter`) VALUES ('$username', 'vio@vio.com', 'vio', 'vio', '20', 'juni', '2019', 'nganjuk', 'Jawa Timur', '0923810', 'mhs', 'apa')");
         }
         public function checkUser($username, $password) {
             $this->db->where('username', $username);
