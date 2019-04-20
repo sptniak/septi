@@ -12,10 +12,32 @@ class Daftar extends CI_Controller {
 
 	public function index()
 	{	
+		$this->load->view('Utama/One');
+		$this->load->view('daftar/index');
 		//load session library
+		// if form was submitte and given captcha matches one in session
+			// $data['title'] = 'User Account';
+	}
+	public function add() {
+		$this->hellomotion->addUser();
+			redirect('index.php/Hello/login');
+	}
+	public function daftarAction(){
 		$this->load->library('session');
 		$this->load->helper(array('captcha','url'));
-		$this->load->library('form_validation');
+		$username = $this->input->post('uname', true);
+		$email = $this->input->post('mail', true);
+		$password = $this->input->post('psww', true);
+		$fullname = $this->input->post('fullname', true);
+		$tgl = $this->input->post('profile_tanggal_lahir[day]', true);
+		$bln = $this->input->post('profile_tanggal_lahir[month]', true);
+		$tahun = $this->input->post('profile_tanggal_lahir[year]', true);
+		$kota = $this->input->post('domisili', true);
+		$province = $this->input->post('Provinsi', true);
+		$no_phone = $this->input->post('nomor', true);
+		$pekerjaan = $this->input->post('job', true);
+		$twitter = $this->input->post('twitter');
+		
 		$data['title'] = 'User Account | Hellomotion';
 		$this->form_validation->set_rules('uname' , 'username', 'required|trim');
 		$this->form_validation->set_rules('mail', 'Email', 'required|trim|valid_email|is_unique[registrasi.email]');//cek double email
@@ -32,18 +54,9 @@ class Daftar extends CI_Controller {
 		$this->form_validation->set_rules('profile_tanggal_lahir[day]' ,'tanggal', 'required|trim');
 		$this->form_validation->set_rules('profile_tanggal_lahir[year]' ,'tahun', 'required|trim');
 		$this->form_validation->set_rules('profile_tanggal_lahir[month]' ,'month', 'required|trim');
-		// if form was submitte and given captcha matches one in session
-			// $data['title'] = 'User Account';
-			$this->load->view('Utama/One', $data);
-			$this->load->view('daftar/index');
-			
-		
-			
-		
-	}
-	public function add() {
-		$this->hellomotion->addUser();
-			redirect('index.php/Hello/login');
+		$this->hellomotion->addUser($username, $email, $password, $fullname, $tgl, $bln, $tahun, $kota, $province, $no_phone, $pekerjaan, $twitter);
+		$this->session->set_flashdata('sukses', 'data berhasil diinput');
+		redirect(base_url('daftar/index'));
 	}
 }
 
