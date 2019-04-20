@@ -39,24 +39,31 @@ class Daftar extends CI_Controller {
 		$twitter = $this->input->post('twitter');
 		
 		$data['title'] = 'User Account | Hellomotion';
-		$this->form_validation->set_rules('uname' , 'username', 'required|trim');
-		$this->form_validation->set_rules('mail', 'Email', 'required|trim|valid_email|is_unique[registrasi.email]');//cek double email
-		$this->form_validation->set_rules('psww' , 'Pass', 'required|trim|min_length[6]|matches[pwd]', 'matches',
-			['matches' => 'Password Not Matches', 
-			'min_length' => 'password too short'
-		]); //password dont match!)
-		$this->form_validation->set_rules('pwd', 'passs', 'required|trim|matches[psww]');//pengecekan password
-		$this->form_validation->set_rules('fullname' ,'full', 'required|trim');
-		$this->form_validation->set_rules('domisili' ,'city', 'required|trim');
-		$this->form_validation->set_rules('provinsi' ,'provinsi', 'required|trim');
-		$this->form_validation->set_rules('nomor' ,'number', 'required|trim');
-		$this->form_validation->set_rules('job' ,'jobs', 'required|trim');
-		$this->form_validation->set_rules('profile_tanggal_lahir[day]' ,'tanggal', 'required|trim');
-		$this->form_validation->set_rules('profile_tanggal_lahir[year]' ,'tahun', 'required|trim');
-		$this->form_validation->set_rules('profile_tanggal_lahir[month]' ,'month', 'required|trim');
-		$this->hellomotion->addUser($username, $email, $password, $fullname, $tgl, $bln, $tahun, $kota, $province, $no_phone, $pekerjaan, $twitter);
-		$this->session->set_flashdata('sukses', 'data berhasil diinput');
-		redirect(base_url('daftar/index'));
+		$this->form_validation->set_rules('uname' , 'username', 'required');
+		$this->form_validation->set_rules('mail', 'Email', 'trim|valid_email|is_unique[registrasi.email]');//cek double email
+		$this->form_validation->set_rules('psww' , 'psww', 'required|matches[pwd]');
+		$this->form_validation->set_rules('pwd', 'pwd', 'required');//pengecekan password
+	// 	['matches' => 'Password Not Matches', 
+	// 		'min_length' => 'password too short'
+	// 	]
+	// );
+		$this->form_validation->set_rules('fullname' ,'full', 'trim|required');
+		$this->form_validation->set_rules('domisili' ,'city', 'trim|required');
+		$this->form_validation->set_rules('Provinsi' ,'Provinsi', 'trim|required');
+		$this->form_validation->set_rules('nomor' ,'number', 'trim|required');
+		$this->form_validation->set_rules('job' ,'jobs', 'trim');
+		$this->form_validation->set_rules('profile_tanggal_lahir[day]' ,'tanggal', 'trim|required');
+		$this->form_validation->set_rules('profile_tanggal_lahir[year]' ,'tahun', 'trim|required');
+		$this->form_validation->set_rules('profile_tanggal_lahir[month]' ,'month', 'trim|required');
+		if ($this->form_validation->run() == TRUE) {
+			$this->hellomotion->addUser($username, $email, $password, $fullname, $tgl, $bln, $tahun, $kota, $province, $no_phone, $pekerjaan, $twitter);
+			$this->session->set_flashdata('sukses', 'data berhasil diinput');
+			redirect(base_url('daftar/index'));
+		} else {
+			$this->load->view('daftar/index');
+		}
+		
+		
 	}
 }
 

@@ -21,11 +21,12 @@
 					<?php if ($this->session->flashdata('sukses') == true) {
 						echo $this->session->flashdata('sukses');
 					}  ?>
+					<?php echo validation_errors(); ?>
 					<?php echo form_open_multipart('/daftar/daftarAction'); ?>
 								<div class="form-group">
 										<label for="email"><b>Username:</b><span>*</span></label>
                                         <input type="text" class="form-control" id="uname" name="uname" value="<?= set_value('uname'); ?>" required>
-                                        <div class="kumpulan"> Spaces are allowed; punctuation is not allowed except for periods, hyphens, and underscores. </div>
+                                        <div class="kumpulan">
 								</div>
 								<div class="form-group">
 										<label for="pwd"><b>E-mail address:</b><span>*</span></label>
@@ -33,7 +34,7 @@
 								</div>		
 								<div class="form-group">
 										<label for="email"><b>Password:</b><span>*</span></label>
-										<input type="password" class="form-control" id="psww" name="psww" value="<?= form_error('psww'); ?>" required>
+										<input type="password" class="form-control" id="psww" name="psww" required>
 								</div>
 								<div class="form-group">
 										<label for="pwd"><b>Confirm Password:</b><span>*</span></label>
