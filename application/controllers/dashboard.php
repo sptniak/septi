@@ -17,6 +17,11 @@ class Dashboard extends CI_Controller {
 		$data['user'] = $this->hellomotion->getUsers($_SESSION['username'], $_SESSION['password']);
 		$this->load->view('/dashboard/index',$data);
 	}
+	public function editAction(){
+		$this->load->view('/dashboard/header');
+		$data['user'] = $this->hellomotion->getUsers($_SESSION['username'], $_SESSION['password']);
+		$this->load->view('/dashboard/edit',$data);
+	}
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('/Hello/login');

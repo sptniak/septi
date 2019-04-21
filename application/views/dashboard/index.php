@@ -4,12 +4,8 @@
 			<h4>Akun Saya</h4>
 				
 				<div id="tabs-wrapper" class="clear-block">
-					<h3 class="with-tabs"><?php print_r($_SESSION['fullname']); ?></h3>		  					  			
-					<ul class="tabs primary">
-						<li >
-							<a href="/user/115150/edit">Edit</a>
-						</li>
-					</ul>
+					<h3 class="with-tabs"><?php print_r($_SESSION['fullname']); ?></h3>
+					<a href="<?php base_url('/dashboard/edit') ?>">Edit</a>
 				</div>		  					  					  					  	
 						  					  		
 				  <h3>Profil</h3><hr>
