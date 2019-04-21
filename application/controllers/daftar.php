@@ -14,13 +14,6 @@ class Daftar extends CI_Controller {
 	{	
 		$this->load->view('Utama/One');
 		$this->load->view('daftar/index');
-		//load session library
-		// if form was submitte and given captcha matches one in session
-			// $data['title'] = 'User Account';
-	}
-	public function add() {
-		$this->hellomotion->addUser();
-			redirect('index.php/Hello/login');
 	}
 	public function daftarAction(){
 		$this->load->library('session');
@@ -37,16 +30,10 @@ class Daftar extends CI_Controller {
 		$no_phone = $this->input->post('nomor', true);
 		$pekerjaan = $this->input->post('job', true);
 		$twitter = $this->input->post('twitter');
-		
-		$data['title'] = 'User Account | Hellomotion';
 		$this->form_validation->set_rules('uname' , 'username', 'required');
 		$this->form_validation->set_rules('mail', 'Email', 'trim|valid_email|is_unique[registrasi.email]');//cek double email
 		$this->form_validation->set_rules('psww' , 'psww', 'required|matches[pwd]');
-		$this->form_validation->set_rules('pwd', 'pwd', 'required');//pengecekan password
-	// 	['matches' => 'Password Not Matches', 
-	// 		'min_length' => 'password too short'
-	// 	]
-	// );
+		$this->form_validation->set_rules('pwd', 'pwd', 'required');
 		$this->form_validation->set_rules('fullname' ,'full', 'trim|required');
 		$this->form_validation->set_rules('domisili' ,'city', 'trim|required');
 		$this->form_validation->set_rules('Provinsi' ,'Provinsi', 'trim|required');
@@ -60,10 +47,9 @@ class Daftar extends CI_Controller {
 			$this->session->set_flashdata('sukses', 'data berhasil diinput');
 			redirect(base_url('daftar/index'));
 		} else {
+			$this->load->view('Utama/One');
 			$this->load->view('daftar/index');
 		}
-		
-		
 	}
 }
 

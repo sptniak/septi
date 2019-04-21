@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/regis.css">
-	<title> <?= $title;?> | HelloMotion.com </title>
+	<title>Daftar | HelloMotion.com </title>
 	
 </head>
 <body>
@@ -17,7 +17,6 @@
     <h2 style="color:red;">DAFTAR AKUN KDRI.CO</h2>
 			<div class="Content">
 					<div class="row-fluid">
-					<!--  -->
 					<?php if ($this->session->flashdata('sukses') == true) {
 						echo $this->session->flashdata('sukses');
 					}  ?>
@@ -115,12 +114,7 @@
 										<div class="form-group">
 												<label><b>Akun Twitter:</b><span>*</span></label>
 												<input type="text" class="form-control" name="akun" required>
-										</div>
-										<div class="form-group">
-												
-												<label><b>What code is in the image?:</b><span>*</span></label>
-												<input type="text" name="captchanya" class="form-control" required>
-										</div>		
+										</div>	
 										
 								
 								<button type="submit" name="add" class="btn btn-success btn-user btn-block">Register</button>

@@ -17,7 +17,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">USER ACCOUNT</h1>
                   </div>
-                  <?php echo form_open_multipart('index.php/Hello/check'); ?>
+                  <?php echo form_open_multipart('/Hello/check'); ?>
                     <div class="form-group">
                       <label><b>Username</b> </label>
                       <input type="text" class="form-control form-control-user" id="exampleInputEmail" name="uname" required>

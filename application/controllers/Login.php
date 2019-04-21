@@ -10,11 +10,11 @@ class Hello extends CI_Controller {
 		$this->load->library('form-validation');
 	}
 
+	public function index(){
+		$this->load->view('Login/login');
+	}
 	public function Login()
 	{
-        // $this->load->view('Utama/One');
-	// $this->load->view('Login/login');
-	
 		$this->load->library('form-validation');
 	}
 }

@@ -8,6 +8,10 @@ class Hello extends CI_Controller {
 		parent::__construct();
 		$this->load->model('hellomotion');
 		$this->load->library('form_validation');
+		$this->load->library('session');
+		if (isset($_SESSION['fullname'])) {
+			redirect(base_url('/dashboard'));
+		}
 	}
 
 	public function login()
@@ -26,14 +30,27 @@ class Hello extends CI_Controller {
 		$username = $this->input->post('uname');
 		$password = $this->input->post('psw');
 		$checkLogin = $this->hellomotion->checkUser($username, $password);
-		// var_dump($checkLogin);
-
-		if ( !empty($checkLogin)) {
-			redirect('index.php/daftar/index');//kalo ada isinya dan bener
+		print_r($checkLogin);
+		if ($checkLogin == 1 ) {
+			$username = $this->hellomotion->getUsers($username, $password);
+			foreach ($username as $key) {
+					$name = [
+						'fullname' => $key->fullname,
+						'username' => $key->username,
+						'password' => $key->passwordd
+					];
+			}
+			$this->session->set_userdata($name);
+			redirect('/dashboard/index');
+		}else{
+			$this->load->view('/Hello/Login');
 		}
-		else {
-			redirect('index.php/Hello/Login');
-		}
+		// if ( !empty($checkLogin)) {
+		// 	redirect('index.php/daftar/index');//kalo ada isinya dan bener
+		// }
+		// else {
+		// 	redirect('index.php/Hello/Login');
+		// }
 	}
 }
 ?>
