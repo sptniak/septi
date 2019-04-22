@@ -14,5 +14,8 @@
             $this->db->where('passwordd', $password);
             return $this->db->get('registrasi')->result();
         }
+        public function editUser($username, $email, $password, $fullname, $tgl, $bln, $tahun, $kota, $province, $no_phone, $pekerjaan, $twitter){
+            return $this->db->query("UPDATE `registrasi` SET `email`='$email',`passwordd`='$passwordd',`fullname`='$fullname',`tgl`='$tgl',`bln`='$bln',`tahun`='$tahun',`kota`='$kota',`province`='$province',`no_phone`='$no_phone',`pekerjaan`='$pekerjaan',`twitter`='$twitter' WHERE `username`='$username'");
+        }
     }
 ?>

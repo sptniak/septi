@@ -21,19 +21,16 @@
 						echo $this->session->flashdata('sukses');
 					}  ?>
 					<?php echo validation_errors(); ?>
-					<?php echo form_open_multipart('/daftar/daftarAction'); ?>
-								<div class="form-group">
-										<label for="email"><b>Username:</b><span>*</span></label>
-                                        <input type="text" class="form-control" id="uname" name="uname" value="<?= set_value('uname'); ?>" required>
-                                        <div class="kumpulan">
-								</div>
+					<?php foreach ($user as $key) {?>
+					<?php echo form_open_multipart('/dashboard/editAction/'.$key->username); ?>
+					
 								<div class="form-group">
 										<label for="pwd"><b>E-mail address:</b><span>*</span></label>
-										<input type="email" class="form-control" id="mail" name="mail" value="<?= set_value('mail'); ?>" required>
+										<input type="email" class="form-control" id="mail" name="mail" value="<?php echo $key->email; ?>">
 								</div>		
 								<div class="form-group">
 										<label for="email"><b>Password:</b><span>*</span></label>
-										<input type="password" class="form-control" id="psww" name="psww" required>
+										<input type="text" class="form-control" value="<?php echo $key->passwordd; ?>" id="psww" name="psww">
 								</div>
 								<div class="form-group">
 										<label for="pwd"><b>Confirm Password:</b><span>*</span></label>
@@ -44,7 +41,7 @@
 											<h5>Profil</h5>
 								<div class="form-group">
 										<label for="email"><b>Nama Lengkap:</b><span>*</span></label>
-										<input type="text" class="form-control" id="nama" name= "fullname"required>
+										<input type="text" class="form-control" value="<?php echo $key->fullname; ?>" id="nama" name= "fullname">
 								</div>
 								
 									<label for="edit-profile-tanggal-lahir"><b>Tanggal Lahir:</<span class="form-required" style=" display:inline;" title="This field is required.">*</span></label>
@@ -62,7 +59,7 @@
 								        </div> 
 								<div class="form-group">
 										<label><b>Kota domisili:</b><span>*</span></label>
-										<input type="text" class="form-control" name ="domisili" required>
+										<input type="text" class="form-control" value="<?php echo $key->username; ?>" name="domisili">
 								</div>
 							
 
@@ -105,21 +102,21 @@
 										</br>
 										<div class="form-group">
 												<label><b>No Handphone:</b><span>*</span></label>
-												<input type="number" class="form-control" name="nomor" required>
+												<input type="number" value="<?php echo $key->no_phone; ?>" class="form-control" name="nomor" required>
 										</div>		
 										<div class="form-group">
 												<label><b>Pekerjaan:</b><span>*</span></label>
-												<input type="text" class="form-control" name="job" required>
+												<input type="text" class="form-control" value="<?php echo $key->pekerjaan; ?>" name="job" required>
 										</div>
 										<div class="form-group">
 												<label><b>Akun Twitter:</b><span>*</span></label>
-												<input type="text" class="form-control" name="akun" required>
+												<input type="text" class="form-control" value="<?php echo $key->twitter; ?>" name="akun">
 										</div>	
 										
 								
-								<button type="submit" name="add" class="btn btn-success btn-user btn-block">Register</button>
+								<button type="submit" name="add" class="btn btn-success btn-user btn-block">Edit</button>
 								<?php echo form_close(); ?>
-
+								<?php } ?> 
 			</div>
 		</div>
     

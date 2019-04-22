@@ -10,7 +10,8 @@ class Hello extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		if (isset($_SESSION['fullname'])) {
-			redirect(base_url('/dashboard'));
+			//redirect(base_url('/dashboard/(:any)'));
+			$this->load->view('/dashboard');
 		}
 	}
 

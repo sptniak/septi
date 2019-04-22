@@ -2,16 +2,16 @@
 	<div class="row-fluid">
 		<div class="span8">
 			<h4>Akun Saya</h4>
-				
+					
 				<div id="tabs-wrapper" class="clear-block">
 					<h3 class="with-tabs"><?php print_r($_SESSION['fullname']); ?></h3>
-					<a href="<?php base_url('/dashboard/edit') ?>">Edit</a>
+					<?php foreach ($user as $key) {?>
+					<a href="<?php echo base_url('/dashboard/edit/'.$key->username) ?>">Edit</a>
 				</div>		  					  					  					  	
 						  					  		
 				  <h3>Profil</h3><hr>
 
 				<dl>
-					<?php foreach ($user as $key) {?>
 				  	<dt class="profile-profile_nama_lengkap">Nama Lengkap</dt>
 					<dd class="profile-profile_nama_lengkap"><?php echo $key->username; ?></dd>
 					<dt class="profile-profile_tanggal_lahir">Tanggal Lahir</dt>
