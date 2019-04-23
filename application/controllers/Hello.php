@@ -27,6 +27,27 @@ class Hello extends CI_Controller {
 		$this->form_validation->set_rules('psww' , 'Pass', 'required|trim');
 
 	}
+	public function admin(){
+		$this->load->view('Admin/login');
+	}
+	public function loginAdminAction(){
+		$username = $this->input->post('uname');
+		$psw = $this->input->post('psw');
+		$checkLogin = $this->hellomotion->checkAdmin($username,$psw);
+		if ($checkLogin == 1 ) {
+			$username = $this->hellomotion->getAdmin($username, $psw);
+			foreach ($username as $key) {
+					$name = [
+						'username' => $key->username,
+						'password' => $key->password
+					];
+			}
+			$this->session->set_userdata($name);
+			redirect('/Admin/dashboardAdmin');
+		}else{
+			$this->load->view('/Hello/admin');
+		}
+	}
 	public function check() {
 		$username = $this->input->post('uname');
 		$password = $this->input->post('psw');
